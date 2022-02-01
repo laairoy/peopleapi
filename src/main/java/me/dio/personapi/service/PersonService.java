@@ -1,5 +1,7 @@
 package me.dio.personapi.service;
 
+import me.dio.personapi.dto.mapper.PersonMapper;
+import me.dio.personapi.dto.request.PersonDTO;
 import me.dio.personapi.dto.response.MessageResponseDTO;
 import me.dio.personapi.entity.Person;
 import me.dio.personapi.repository.PersonRepository;
@@ -12,14 +14,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class PersonService {
 
     private PersonRepository personRepository;
-
+    private final PersonMapper personMapper = PersonMapper.INSTANCE;
 
     @Autowired
     public void PersonRepository(PersonRepository personRepository){
         this.personRepository = personRepository;
     }
 
-    public MessageResponseDTO createPerson(Person person){
+    public MessageResponseDTO createPerson(PersonDTO personDTO){
+
+        Person person = personMapper.toModel(personDTO);
+
         Person savedPerson = personRepository.save(person);
 
         return MessageResponseDTO
