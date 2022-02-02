@@ -16,57 +16,64 @@ http://localhost:8080/api/v1/people
 
 ### Requisições que podem ser feitas:
 
-- GET
+#### GET
 ```
 http://localhost:8080/api/v1/people
 ```
 
-- GET (BY ID)
+#### GET (BY ID)
 ```
 http://localhost:8080/api/v1/people/{id}
 ```
 
-- POST
+#### POST
 ```
 http://localhost:8080/api/v1/people
 ```
-	- Corpo da requisição, exemplo:
-	```json
-	{
-    		"firstName": "Jose",
-    		"lastName": "Aristides",
-    		"cpf": "011.011.111-11",
-    		"birthDate": "2001-10-10",
-    		"phones": [
-        		{
-            			"type": "MOBILE",
-            			"number": "5542999999999"
-        		}
-    		]
-	}
-	```
-- PUT
+- Corpo da requisição, exemplo:
+
+```json
+{
+    	"firstName": "Jose",
+    	"lastName": "Aristides",
+    	"cpf": "011.011.111-11",
+    	"birthDate": "2001-10-10",
+	"phones": [
+        	{
+            		"type": "MOBILE",
+            		"number": "5542999999999"
+        	}
+    	]
+}
+```
+
+#### PUT
+
 ```
 http://localhost:8080/api/v1/people/{id}
 ```
-	- Corpo da requisição, exemplo:
-	```json
-	{
-    		"id": 1,
-    		"firstName": "Jose",
-    		"lastName": "Aristides",
-    		"cpf": "011.011.111-11",
-    		"birthDate": "2001-10-10",
-    		"phones": [
-        		{
-            			"id": 1,
-            			"type": "MOBILE",
-            			"number": "5542999999999"
-        		}
-    		]
-	}
-	```
-- DELETE
+
+- Corpo da requisição, exemplo:
+
+```json
+{
+    	"id": 1,
+    	"firstName": "Jose",
+    	"lastName": "Aristides",
+    	"cpf": "011.011.111-11",
+    	"birthDate": "2001-10-10",
+    	"phones": [
+        	{
+            		"id": 1,
+            		"type": "MOBILE",
+            		"number": "5542999999999"
+        	}
+    	]
+}
+```
+
+#### DELETE
+
 ```
 http://localhost:8080/api/v1/people/{id}
 ```
